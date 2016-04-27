@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">JsonApiInRecyclerView(1)Tem1</string>
+    <string name="Hello">Hello!</string>
+    <string name="whatDo">This program download ISON api and give it to recyclerView using my own adapter.</string>
+    <string name="whatUsing"> I using library: butterknife, retroLambda, GSON</string>
+    <string name="goNext">NEXT</string>
+    <string name="name">Name:</string>
+    <string name="surname">Surname:</string>
+</resources>
