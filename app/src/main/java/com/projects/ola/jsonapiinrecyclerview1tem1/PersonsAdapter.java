@@ -8,13 +8,15 @@ import android.widget.TextView;
 
 import com.projects.ola.jsonapiinrecyclerview1tem1.model.Person;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Ola on 2016-04-24.
  */
+
 public class PersonsAdapter extends RecyclerView.Adapter<PersonsAdapter.MyViewHolder> {
-    private List<Person> personsList;
+    private List<Person> personsList=new ArrayList<>();
 
     public PersonsAdapter(List<Person> personsList) {
         this.personsList = personsList;
@@ -48,5 +50,4 @@ public class PersonsAdapter extends RecyclerView.Adapter<PersonsAdapter.MyViewHo
     public int getItemCount() {
         return personsList.size();
     }
-
 }

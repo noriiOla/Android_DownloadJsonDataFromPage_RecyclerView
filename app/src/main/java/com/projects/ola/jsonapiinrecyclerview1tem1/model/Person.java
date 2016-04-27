@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Created by Ola on 2016-04-27.
  */
+
 public class Person {
 
     @SerializedName("name")
