@@ -14,6 +14,6 @@ public class Glowna extends AppCompatActivity {
     }
 
     public void OpenLoaderActivity(View view) {
-        startActivity(new Intent(this, LoaderActivity.class));
+        startActivity(new Intent(this, LoaderActivityNew.class));
     }
 }
