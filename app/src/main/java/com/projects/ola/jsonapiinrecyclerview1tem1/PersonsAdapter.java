@@ -1,5 +1,6 @@
 package com.projects.ola.jsonapiinrecyclerview1tem1;
 
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,9 @@ import com.projects.ola.jsonapiinrecyclerview1tem1.model.Person;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * Created by Ola on 2016-04-24.
  */
@@ -19,18 +23,8 @@ public class PersonsAdapter extends RecyclerView.Adapter<PersonsAdapter.MyViewHo
     private List<Person> personsList=new ArrayList<>();
 
     public PersonsAdapter(List<Person> personsList) {
+
         this.personsList = personsList;
-    }
-
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name;
-        TextView surname;
-
-        public MyViewHolder(View itemView) {
-            super(itemView);
-            name = (TextView) itemView.findViewById(R.id.TextViewName);
-            surname = (TextView) itemView.findViewById(R.id.TextViewSurname);
-        }
     }
 
     @Override
@@ -49,5 +43,17 @@ public class PersonsAdapter extends RecyclerView.Adapter<PersonsAdapter.MyViewHo
     @Override
     public int getItemCount() {
         return personsList.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        @Nullable @Bind(R.id.TextViewName) TextView name;
+        @Nullable @Bind(R.id.TextViewSurname) TextView surname;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+            //name = (TextView) itemView.findViewById(R.id.TextViewName);
+            //surname = (TextView) itemView.findViewById(R.id.TextViewSurname);
+        }
     }
 }

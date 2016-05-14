@@ -13,13 +13,13 @@ public class Person {
     @SerializedName("surname")
     String mSurname;
     @SerializedName("gender")
-    String mGenger;
+    String Gender;
     @SerializedName("region")
     String mRegion;
 
 
-    public String getGenger() {
-        return mGenger;
+    public String getGender() {
+        return Gender;
     }
 
     public String getName() {

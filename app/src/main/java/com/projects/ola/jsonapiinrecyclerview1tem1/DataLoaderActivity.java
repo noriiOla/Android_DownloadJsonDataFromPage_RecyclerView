@@ -10,17 +10,16 @@ import android.support.v7.widget.RecyclerView;
 
 import com.projects.ola.jsonapiinrecyclerview1tem1.model.Person;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class LoaderActivityNew extends AppCompatActivity {
+public class DataLoaderActivity extends AppCompatActivity {
 
     public static final int LOADER_ID = 1;
-    @Bind(R.id.recycler_vieww)
-    RecyclerView recycleview;
+    @Bind(R.id.recyclerView)
+    RecyclerView rv_personList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +28,8 @@ public class LoaderActivityNew extends AppCompatActivity {
         ButterKnife.bind(this);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recycleview.setLayoutManager(mLayoutManager);
-        recycleview.setItemAnimator(new DefaultItemAnimator());
+        rv_personList.setLayoutManager(mLayoutManager);
+        rv_personList.setItemAnimator(new DefaultItemAnimator());
         setupLoader();
     }
 
@@ -39,12 +38,12 @@ public class LoaderActivityNew extends AppCompatActivity {
 
             @Override
             public Loader<List<Person>> onCreateLoader(int id, Bundle args) {
-                return new DataAsyncTaskLoader(LoaderActivityNew.this);
+                return new DataAsyncTaskLoader(DataLoaderActivity.this);
             }
 
             @Override
             public void onLoadFinished(Loader<List<Person>> loader, List<Person> data) {
-                recycleview.setAdapter(new PersonsAdapter(data));
+                rv_personList.setAdapter(new PersonsAdapter(data));
             }
 
             @Override
